@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # backend:
+  #   build: backend
+  #   ports:
+  #     - 8000:8000
+
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    ports:
+      - 6543:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - postgres/.env
+
+  sync-workflow:
+    build: sync-workflow
+    ports:
+      - 8080:8080
+    env_file:
+      - sync-workflow/.env
+
+
+volumes:
+  postgres:

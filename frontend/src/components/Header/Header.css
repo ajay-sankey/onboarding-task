@@ -1,0 +1,19 @@
+.header {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0rem 0.5rem 0rem 0rem;
+    background-color: rgb(209 213 219);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(3 7 18);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    color: rgb(209 213 219);
+}

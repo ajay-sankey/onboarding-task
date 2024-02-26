@@ -1,0 +1,24 @@
+.navitem {
+    /* border: 1px solid rgb(243 244 246); */
+    border-radius: 0.25rem;
+    /* background-color: rgb(243 244 246); */
+    /* color: rgb(3 7 18); */
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+    text-decoration: none;
+    color: rgb(243 244 246); 
+}
+
+.active {
+    background-color: rgb(243 244 246);
+    color: rgb(3 7 18);
+}
+
+.navitem:hover {
+    background-color: rgb(243 244 246);
+    color: rgb(3 7 18);
+}
