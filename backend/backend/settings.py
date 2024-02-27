@@ -156,7 +156,10 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    # For testing purpose, access token lifetime is set to 1 day
+    # SECURITY WARNING: use smaller lifetime in production
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+# SECURITY WARNING: use `CORS_ALLOWED_ORIGINS` in production
+CORS_ALLOW_ALL_ORIGINS = True
