@@ -1,37 +1,21 @@
+/* eslint-disable react/prop-types */
+import { NavLink } from 'react-router-dom'
 import './NavBar.css'
 
-import { NavLink } from 'react-router-dom'
-
-function NavBar() {
-    const navbarItems = [
-        {
-            to: 'add-user',
-            text: 'Add User',
-        },
-        {
-            to: 'view-users',
-            text: 'View Users',
-        },
-        {
-            to: 'job-triggers',
-            text: 'Job Triggers'
-        }
-    ]
-
+function NavBar({ navLinks }) {
     return (
         <div className='navbar'>
-            <div className='icon'>S</div>
-            <div className='navitem-container'>
+            <div className='navbar-icon'>S</div>
+            <div className='navlinks-container'>
                 {
-                    navbarItems.map((value, index) => {
-                        return <NavLink
-                            key={`navlink-${index}`}
-                            to={value.to}
-                            className={`navitem ${({ isActive, isPending }) =>
+                    navLinks.map((value, index) => {
+                        return <NavLink 
+                            className={`navlink ${({ isActive, isPending }) => {
                                 isActive ? 'active' : isPending ? 'pending' : ''
-                            }`}
-                        >{value.text}</NavLink>
-                    })
+                            }}`} 
+                            key={`navlink-${index}`} to={value.to}>{value.text}</NavLink>
+                        }
+                    )
                 }
             </div>
         </div>

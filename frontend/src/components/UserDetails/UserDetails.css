@@ -1,0 +1,74 @@
+.user-details {
+    padding: 1rem;
+    height: 100%;
+    background-color: white;
+    border-radius: 0.75rem 0rem 0rem 0rem;
+    box-shadow: inset var(--gray-100) 0px 0px 24px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.user-details-title {
+    padding: 0rem 0rem 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+.user-details-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--gray-100) 0px 0px 24px;
+    overflow-y: auto;
+}
+
+.user-details-container table {
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: white;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.user-details-container th, td {
+    padding: 0.25rem 0.5rem;
+}
+
+.user-details-container th {
+    background-color: var(--cyan-400);
+    color: white;
+    font-weight: 600;
+}
+
+.user-details-container th:first-child {
+    border-top-left-radius: 0.5rem;
+}
+
+.user-details-container th:last-child {
+    border-top-right-radius: 0.5rem;
+}
+
+.user-details-container tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5rem;
+}
+
+.user-details-container tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5rem;
+}
+
+.user-details-container table tbody tr:nth-child(odd) {
+    color: var(--gray-950);
+    background-color: white;
+}
+
+.user-details-container table tbody tr:nth-child(even) {
+    color: var(--gray-950);
+    background-color: var(--gray-100);
+}
+
+.user-details-container table th:nth-child(3) {
+    min-width: 8rem;
+}
+
+.user-details-container table tbody tr:hover {
+    cursor: pointer;
+    background-color: var(--gray-200);
+}

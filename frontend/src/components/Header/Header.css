@@ -1,19 +1,37 @@
 .header {
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0rem 0.5rem 0rem 0rem;
-    background-color: rgb(209 213 219);
-}
-
-.profile {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(3 7 18);
+    padding: 0rem 1rem;
+    gap: 1rem;
+    height: 4rem;
+}
+
+.header-title {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.0625rem solid black;
     border-radius: 50%;
-    width: 2rem;
+    font-weight: bold;
+    background-color: white;
+    color: black;
     height: 2rem;
-    color: rgb(209 213 219);
+    width: 2rem;
+}
+
+.logout-button {
+    width: 100%;
+    max-width: 6rem;
+    color: white;
+    border: none;
+    background-color: var(--cyan-400);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
 }
