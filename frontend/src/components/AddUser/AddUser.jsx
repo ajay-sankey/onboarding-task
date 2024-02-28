@@ -1,7 +1,7 @@
-import { StateContext } from '../../Contexts'
 import './AddUser.css'
-
+import { StateContext } from '../../Contexts'
 import { useContext, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 function AddUser() {
     const [requestBody, setRequestBody] = useState({
@@ -37,6 +37,10 @@ function AddUser() {
                 }                
             }
         ).catch(() => console.log('Something went wrong'))
+    }
+
+    if (!state.isLoggedIn) {
+        return <Navigate to='/login'></Navigate>
     }
 
     return (

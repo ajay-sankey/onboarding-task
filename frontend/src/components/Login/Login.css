@@ -28,12 +28,17 @@
 .login-field {
     width: 100%;
     outline: none;
-    border: 0.0625rem solid black;
-    border-radius: 0.25rem;
     color: black;
     background-color: white;
+    border: 0.125rem solid var(--gray-300);
+    outline: none;
+    border-radius: 0.5rem;
     padding: 0.5rem;
     font-size: 1rem;
+}
+
+.login-field:focus {
+    background-color: var(--gray-50);
 }
 
 .error-field {

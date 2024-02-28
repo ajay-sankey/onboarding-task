@@ -13,11 +13,18 @@
     font-size: 1.5rem;
 }
 
-.user-details-container {
+.user-details-container-outer {
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: var(--gray-100) 0px 0px 24px;
+    padding: 1rem;
+}
+
+.user-details-container {
+    background-color: white;
+    border-radius: 0.5rem;
     overflow-y: auto;
+    box-shadow: var(--gray-100) 0px 0px 24px;
 }
 
 .user-details-container table {
@@ -72,3 +79,39 @@
     cursor: pointer;
     background-color: var(--gray-200);
 }
+
+.user-details-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 1rem 0.25rem 0rem 0.5rem;
+}
+
+.user-details-pagination-prev,
+.user-details-pagination-next {
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--gray-100);
+    box-shadow: var(--gray-100) 0px 0px 24px;
+    color: black;
+    font-size: 1rem;
+}
+
+.user-details-pagination-prev:disabled,
+.user-details-pagination-next:disabled {
+    color: var(--gray-200);
+    cursor: not-allowed;
+}
+
+.user-details-pagination-current {
+    padding: 0.0625rem 0.625rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--gray-100);
+    box-shadow: var(--gray-100) 0px 0px 24px;
+    color: black;
+    font-size: 1rem;
+}
+

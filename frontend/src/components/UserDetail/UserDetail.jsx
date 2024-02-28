@@ -1,6 +1,6 @@
 import './UserDetail.css'
 
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import { StateContext } from '../../Contexts'
 
@@ -29,6 +29,10 @@ function UserDetail() {
             }
         ).catch(() => console.log('Something went wrong'))
     }, [])
+
+    if (!state.isLoggedIn) {
+        return <Navigate to='/login'></Navigate>
+    }
 
     return (
         <div className='user-detail'>
