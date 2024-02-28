@@ -3,6 +3,7 @@ import sys
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User as AuthUser
 from rest_framework import status
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
@@ -36,7 +37,7 @@ class LoginView(APIView):
             return Response({'message': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class EmployeeView(APIView):
+class EmployeeView(APIView, LimitOffsetPagination):
 
     permission_classes = [IsAuthenticated]
 
@@ -44,10 +45,13 @@ class EmployeeView(APIView):
         try:
             if employee_id:
                 employees = Employee.objects.filter(employee_id=employee_id)
-            else:
-                employees = Employee.objects.all()
+                serializer = EmployeeSerializer(employees, many=True)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+        
+            employees = Employee.objects.all()
+            employees = self.paginate_queryset(employees, request, view=self)
             serializer = EmployeeSerializer(employees, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return self.get_paginated_response(serializer.data)
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             print(f'--- EmployeeView.get {exc_type}: {exc_obj} at line {exc_tb.tb_lineno}')
